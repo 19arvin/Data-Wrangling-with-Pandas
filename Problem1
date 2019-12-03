@@ -1,0 +1,18 @@
+import pandas as pd 
+   
+a = {'student':['icebear','panda','grizzly'], 'math':[80,95,79]} 
+df1 = pd.DataFrame(a)
+
+s = {'student':['icebear','panda','grizzly'], 'electronics':[85,81,83]} 
+df2 = pd.DataFrame(s)
+
+d = {'student':['icebear','panda','grizzly'], 'GEAS':[90,79,93]} 
+df3 = pd.DataFrame(d)
+
+f = {'student':['icebear','panda','grizzly'], 'ESAT':[93,89,88]} 
+df4 = pd.DataFrame(f)
+  
+z = pd.merge(df1, df2, on='student', how='inner')
+x = pd.merge(z, df3, on='student', how='inner')
+c = pd.merge(x, df4, on='student', how='inner')
+print(c)
